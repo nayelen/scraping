@@ -11,13 +11,4 @@ const getCharacters = async (req, res, next) => {
   }
 }
 
-const insertCharacters = async (req, res, next) => {
-  try {
-    await Character.insertMany(characters.results);
-    return res.status(200).json("Characters inserted successfully")
-
-  } catch (error) {
-    return res.status(404).json(error)
-  }
-};
-module.exports = { getCharacters, insertCharacters };
+module.exports = { getCharacters };
